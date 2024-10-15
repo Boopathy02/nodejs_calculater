@@ -9,6 +9,11 @@ pipeline {
                 git url: 'git@github.com:vanthiyadhevan/nodejs_calculater.git', branch: 'main', credentialsId: 'vanthiyadhevan'
             }
         }
+        stage('Install Dependency') {
+        	steps {
+        		sh 'npm install -g @angular/cli'
+        	}
+        }
         stage('Build') {
             steps {
                 sh 'ng build'
