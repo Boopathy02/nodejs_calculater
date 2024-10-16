@@ -4,15 +4,6 @@ pipeline {
         docker_image_name = 'nodejs_calculater'
     }
     stages {
-        stage('Install Angular CLI') {
-            steps {
-                sh '''
-                    if ! command -v ng &> /dev/null; then
-                        npm install -g @angular/cli
-                    fi
-                '''
-            }
-        }
         stage('Checkout') {
             steps {
                 git url: 'git@github.com:vanthiyadhevan/nodejs_calculater.git', branch: 'main', credentialsId: 'vanthiyadhevan'
@@ -20,7 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'ng build'
+                sh 'npm install'
             }
         }
         stage('Test') {
