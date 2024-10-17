@@ -20,7 +20,7 @@ phases:
       - echo Build completed. Artifact are being prepared...
 
 artifacts:
-  base-directory: dist/my-angular-project/
+  base-directory: dist/my-angular-project
   files:
     - dist/**/*
 
