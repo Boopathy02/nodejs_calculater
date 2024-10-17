@@ -1,5 +1,8 @@
 pipeline {
     agent any 
+    tools {
+        node "nodejs"
+    }
     environment {
         docker_image_name = 'nodejs_calculater'
     }
